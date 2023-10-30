@@ -56,6 +56,16 @@ else {
         Write-Error "Failed to backup and update the profile. Error: $_"
     }
 }
+<<<<<<< HEAD
+=======
+# If the file already exists, show the message and do nothing.
+ else {
+		 Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1 -Force
+		 Invoke-RestMethod https://github.com/Atephys/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
+		 Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
+ }
+& $profile
+>>>>>>> 3a8cf85 (Update setup.ps1)
 
 # OMP Install
 try {

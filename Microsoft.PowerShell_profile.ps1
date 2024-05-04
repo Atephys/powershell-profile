@@ -83,7 +83,7 @@ function Test-CommandExists {
     param($command)
     $exists = $null -ne (Get-Command $command -ErrorAction SilentlyContinue)
     return $exists
-
+}
 
 # Editor Configuration
 $EDITOR = if (Test-CommandExists nvim) { 'nvim' }
